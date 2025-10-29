@@ -210,7 +210,7 @@ export const brandConfig: BrandConfig = {
   logo: {
     src: "/plcc/plcclogo.jpg", // Paradise Lakes Care Centre logo
     alt: "Paradise Lakes Care Centre Logo",
-    favicon: "%PUBLIC_URL%/plcc/favicon_io/favicon.ico"
+    favicon: "/plcc/favicon_io/favicon.ico"
   },
 
   // Contact Information
