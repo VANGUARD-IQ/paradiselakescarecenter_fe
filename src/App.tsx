@@ -5,9 +5,6 @@ import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "./apollo/client";
 import Home from "./pages/Home";
 import Podcast from "./pages/Podcast";
-import OneGroupProposal from "./pages/offers/onegroup";
-import WattDropProposal from "./pages/offers/wattdrop";
-// import OneGroupStructuredProposal from "./pages/offers/onegroupstructured";
 import { brandConfig } from "./brandConfig";
 import theme from "./theme";
 
@@ -189,24 +186,7 @@ import ProviderView from "./pages/provider/ProviderView";
 import EditProvider from "./pages/provider/EditProvider";
 import DiscoverProviders from "./pages/provider/DiscoverProviders";
 
-// Research & Development imports
-import ResearchAndDesignDashboard from "./pages/researchanddesign/index";
-import ResearchAndDesignProjects from "./pages/researchanddesign/projects";
-import ResearchAndDesignProjectWizard from "./pages/researchanddesign/new";
-import ResearchAndDesignProjectDetail from "./pages/researchanddesign/project";
-import ResearchAndDesignProjectEdit from "./pages/researchanddesign/edit";
-import ResearchAndDesignTimesheet from "./pages/researchanddesign/timesheet";
-import ResearchAndDesignEvidence from "./pages/researchanddesign/evidence";
-import ResearchAndDesignUploadEvidence from "./pages/researchanddesign/upload-evidence";
-import ResearchAndDesignEvidenceDetails from "./pages/researchanddesign/evidence-details";
-import ResearchAndDesignRecordAudio from "./pages/researchanddesign/record-audio";
-import ResearchAndDesignGapAnalysis from "./pages/researchanddesign/gaps";
-import ResearchAndDesignReports from "./pages/researchanddesign/reports";
-import ResearchAndDesignNewActivity from "./pages/researchanddesign/new-activity";
-import ResearchAndDesignActivityDetails from "./pages/researchanddesign/activity-details";
-import ResearchAndDesignEditActivity from "./pages/researchanddesign/edit-activity";
-import ResearchAndDesignTranscribe from "./pages/researchanddesign/transcribe";
-// import ShippingAddresses from "./pages/profile/ShippingAddresses";
+
 
 // Training Center imports
 import HamishTraining from "./pages/hamish";
@@ -218,9 +198,7 @@ import HamishTraining from "./pages/hamish";
 import { DomainsPage } from "./pages/domains/index";
 import { DomainDetails } from "./pages/domains/DomainDetails";
 
-// Offers module imports
-import { MaintenanceOffer } from "./pages/offers/onegroup/maintenance";
-import SiteMaintenance from "./pages/offers/onegroup/sitemaintenance";
+
 
 // Public Booking imports (NO AUTH REQUIRED)
 import PublicBookingPage from "./pages/calendars/booking/PublicBookingPage";
@@ -257,10 +235,7 @@ const AppContent = () => {
         <Route path="/book/:slug/success" element={<PublicBookingSuccessPage />} />
         <Route path="/calendars/booking/manage/:token" element={<ManageBooking />} />
 
-        {/* Public Proposal Pages */}
-        <Route path="/offers/onegroup" element={<OneGroupProposal />} />
-        <Route path="/offers/wattdrop" element={<WattDropProposal />} />
-        {/* <Route path="/offers/onegroupstructured" element={<OneGroupStructuredProposal />} /> */}
+
 
         {/* Event routes */}
         <Route path="/events/tom/1" element={<Event1Page />} />
@@ -378,23 +353,6 @@ const AppContent = () => {
         <Route path="/provider/edit" element={<EditProvider />} />                 {/* USER: Edit provider profile */}
         <Route path="/providers/discover" element={<DiscoverProviders />} />       {/* PUBLIC: Discover and search provider profiles */}
 
-        {/* Research & Development routes */}
-        <Route path="/researchanddesign" element={<ResearchAndDesignDashboard />} />  {/* USER: R&D dashboard and project management */}
-        <Route path="/researchanddesign/projects" element={<ResearchAndDesignProjects />} />  {/* USER: R&D projects list */}
-        <Route path="/researchanddesign/projects/new" element={<ResearchAndDesignProjectWizard />} />  {/* USER: Create new R&D project */}
-        <Route path="/researchanddesign/projects/:id" element={<ResearchAndDesignProjectDetail />} />  {/* USER: R&D project details */}
-        <Route path="/researchanddesign/projects/:id/edit" element={<ResearchAndDesignProjectEdit />} />  {/* USER: Edit R&D project */}
-        <Route path="/researchanddesign/timesheet" element={<ResearchAndDesignTimesheet />} />  {/* USER: R&D time tracking */}
-        <Route path="/researchanddesign/evidence" element={<ResearchAndDesignEvidence />} />  {/* USER: R&D evidence upload */}
-        <Route path="/researchanddesign/evidence/upload" element={<ResearchAndDesignUploadEvidence />} />  {/* USER: Upload new evidence */}
-        <Route path="/researchanddesign/evidence/:evidenceId" element={<ResearchAndDesignEvidenceDetails />} />  {/* USER: View/edit evidence details */}
-        <Route path="/researchanddesign/record-audio" element={<ResearchAndDesignRecordAudio />} />  {/* USER: R&D audio recording */}
-        <Route path="/researchanddesign/activities/new" element={<ResearchAndDesignNewActivity />} />  {/* USER: Create new R&D activity */}
-        <Route path="/researchanddesign/activities/:id" element={<ResearchAndDesignActivityDetails />} />  {/* USER: View R&D activity details */}
-        <Route path="/researchanddesign/activities/:id/edit" element={<ResearchAndDesignEditActivity />} />  {/* USER: Edit R&D activity */}
-        <Route path="/researchanddesign/gaps" element={<ResearchAndDesignGapAnalysis />} />  {/* USER: R&D gap analysis */}
-        <Route path="/researchanddesign/reports" element={<ResearchAndDesignReports />} />  {/* USER: R&D reports and analytics */}
-        <Route path="/researchanddesign/transcribe" element={<ResearchAndDesignTranscribe />} />  {/* USER: Audio transcription tool */}
 
         {/* Training Center routes */}
         <Route path="/hamish" element={<HamishTraining />} />  {/* USER: Training videos and resources */}
@@ -405,9 +363,7 @@ const AppContent = () => {
         <Route path="/domains" element={<DomainsPage />} />  {/* USER: Domain search and management */}
         <Route path="/domains/:id" element={<DomainDetails />} />  {/* USER: Domain details and DNS management */}
 
-        {/* Offers routes */}
-        <Route path="/offers/maintenance" element={<MaintenanceOffer />} />  {/* PUBLIC: Business maintenance subscription offer */}
-        <Route path="/offers/sitemaintenance" element={<SiteMaintenance />} />  {/* PUBLIC: Site maintenance subscription offer */}
+
 
         {/* Test routes */}
         <Route path="/test/sendemail" element={<SendTestEmail />} />

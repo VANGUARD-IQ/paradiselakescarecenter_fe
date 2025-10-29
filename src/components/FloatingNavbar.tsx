@@ -61,7 +61,6 @@ import projectsModuleConfig from '../pages/projects/moduleConfig';
 import billsModuleConfig from '../pages/bills/moduleConfig';
 import emailsModuleConfig from '../pages/emails/moduleConfig';
 import passwordsModuleConfig from '../pages/passwords/moduleConfig';
-import researchAndDesignModuleConfig from '../pages/researchanddesign/moduleConfig';
 import tenantManagementModuleConfig from '../pages/tenant-management/moduleConfig';
 import adminModuleConfig from '../pages/admin/moduleConfig';
 import providerModuleConfig from '../pages/provider/moduleConfig';
@@ -171,7 +170,6 @@ export const FloatingNavbar: React.FC = () => {
     vapiModuleConfig,
     meetingSummarizerModule,
     transcriptionsModuleConfig,
-    researchAndDesignModuleConfig,
     subscriptionModuleConfig,
     providerModuleConfig,
     knowledgebaseModuleConfig,

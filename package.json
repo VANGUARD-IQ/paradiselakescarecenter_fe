@@ -104,7 +104,10 @@
     "rebrand": "node scripts/rebrand.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "import/first": "off"
+    }
   },
   "browserslist": {
     "production": [
