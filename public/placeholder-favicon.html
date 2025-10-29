@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placeholder Favicon Generator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .favicon-preview {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        canvas {
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin: 10px;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        h1 {
+            color: #3B82F6;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #CBD5E0;
+        }
+        button {
+            background: #3B82F6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #2563EB;
+        }
+        .download-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Placeholder Favicon Generator</h1>
+    <div class="instructions">
+        <p>This generates a simple placeholder favicon for your brand. The favicon shows "TM" (Tommy Miller) by default.</p>
+        <p>To use: Right-click on each canvas and select "Save Image As..." to download the different sizes.</p>
+    </div>
+
+    <div class="favicon-preview">
+        <h3>Favicon Sizes</h3>
+        
+        <div>
+            <h4>16x16 (Browser Tabs)</h4>
+            <canvas id="favicon16" width="16" height="16"></canvas>
+        </div>
+        
+        <div>
+            <h4>32x32 (Standard Favicon)</h4>
+            <canvas id="favicon32" width="32" height="32"></canvas>
+        </div>
+        
+        <div>
+            <h4>192x192 (Android Chrome)</h4>
+            <canvas id="favicon192" width="192" height="192"></canvas>
+        </div>
+        
+        <div>
+            <h4>512x512 (PWA Splash)</h4>
+            <canvas id="favicon512" width="512" height="512"></canvas>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <h3>📥 Download Instructions</h3>
+        <ol style="text-align: left; max-width: 500px; margin: 0 auto;">
+            <li>Right-click on each canvas above</li>
+            <li>Select "Save Image As..."</li>
+            <li>Save with these names:
+                <ul>
+                    <li>16x16 → favicon-16x16.png</li>
+                    <li>32x32 → favicon-32x32.png</li>
+                    <li>192x192 → logo192.png</li>
+                    <li>512x512 → logo512.png</li>
+                </ul>
+            </li>
+            <li>Place all files in /public/ folder</li>
+            <li>For .ico file, use an online converter with the 32x32 PNG</li>
+        </ol>
+    </div>
+
+    <script>
+        function createFavicon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3B82F6');  // Blue
+            gradient.addColorStop(1, '#8B5CF6');  // Purple
+            
+            // Draw background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add subtle border
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = size > 32 ? 2 : 1;
+            ctx.strokeRect(0.5, 0.5, size - 1, size - 1);
+            
+            // Draw text
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Adjust font size based on canvas size
+            let fontSize;
+            if (size <= 16) {
+                fontSize = 10;
+            } else if (size <= 32) {
+                fontSize = 18;
+            } else if (size <= 192) {
+                fontSize = size * 0.45;
+            } else {
+                fontSize = size * 0.4;
+            }
+            
+            ctx.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
+            
+            // Add shadow for larger sizes
+            if (size > 32) {
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+                ctx.shadowBlur = size / 20;
+                ctx.shadowOffsetX = size / 50;
+                ctx.shadowOffsetY = size / 50;
+            }
+            
+            // Draw the text
+            ctx.fillText('TM', size / 2, size / 2);
+        }
+        
+        // Generate all favicon sizes
+        createFavicon('favicon16', 16);
+        createFavicon('favicon32', 32);
+        createFavicon('favicon192', 192);
+        createFavicon('favicon512', 512);
+        
+        // Auto-download function (optional - commented out for manual control)
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Uncomment to enable auto-download buttons
+        /*
+        document.getElementById('downloadAll').addEventListener('click', () => {
+            downloadCanvas('favicon16', 'favicon-16x16.png');
+            downloadCanvas('favicon32', 'favicon-32x32.png');
+            downloadCanvas('favicon192', 'logo192.png');
+            downloadCanvas('favicon512', 'logo512.png');
+        });
+        */
+    </script>
+</body>
+</html>

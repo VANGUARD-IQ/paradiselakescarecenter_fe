@@ -1,0 +1,51 @@
+flowchart TD
+    Start([Client R&D Activity Assessment]) --> Q1["Is the company<br/>registered with ASIC?"]
+    
+    Q1 -->|No| NotElig1["❌ Not Eligible:<br/>Company must be registered"]
+    Q1 -->|Yes| Q2["Minimum expenditure<br/>≥ $20,000?"]
+    
+    Q2 -->|No| NotElig2["❌ Not Eligible:<br/>Below minimum threshold"]
+    Q2 -->|Yes| Q3["Industry excluded?<br/>Gambling/Tobacco<br/>from July 2025"]
+    
+    Q3 -->|Yes| NotElig3["❌ Not Eligible:<br/>Excluded industry"]
+    Q3 -->|No| Q4["Is there a<br/>testable hypothesis?"]
+    
+    Q4 -->|No| CheckSupp1["Check if eligible as<br/>Supporting R&D Activity"]
+    Q4 -->|Yes| Q5["Can outcome be<br/>determined from<br/>current knowledge?"]
+    
+    Q5 -->|Yes| CheckSupp2["Check if eligible as<br/>Supporting R&D Activity"]
+    Q5 -->|No| Q6["Is substantial purpose<br/>to generate<br/>new knowledge?"]
+    
+    Q6 -->|No| CheckSupp3["Check if eligible as<br/>Supporting R&D Activity"]
+    Q6 -->|Yes| Q7["Is it conducted<br/>systematically &<br/>experimentally?"]
+    
+    Q7 -->|No| CheckSupp4["Check if eligible as<br/>Supporting R&D Activity"]
+    Q7 -->|Yes| Q8["Is activity on<br/>exclusion list<br/>s.355-25(2)?"]
+    
+    Q8 -->|Yes| CheckSupp5["Check if eligible as<br/>Supporting R&D Activity"]
+    Q8 -->|No| CoreElig["✅ ELIGIBLE:<br/>Core R&D Activity"]
+    
+    CheckSupp1 --> SuppQ1["Directly related to<br/>Core R&D activity?"]
+    CheckSupp2 --> SuppQ1
+    CheckSupp3 --> SuppQ1
+    CheckSupp4 --> SuppQ1
+    CheckSupp5 --> SuppQ1
+    
+    SuppQ1 -->|No| NotElig4["❌ Not Eligible:<br/>Not related to Core R&D"]
+    SuppQ1 -->|Yes| SuppQ2["Does it produce<br/>goods/services OR<br/>is excluded activity?"]
+    
+    SuppQ2 -->|No| SuppElig1["✅ ELIGIBLE:<br/>Supporting R&D Activity"]
+    SuppQ2 -->|Yes| SuppQ3["Is dominant purpose<br/>supporting Core R&D?"]
+    
+    SuppQ3 -->|No| NotElig5["❌ Not Eligible:<br/>Fails dominant<br/>purpose test"]
+    SuppQ3 -->|Yes| SuppElig2["✅ ELIGIBLE:<br/>Supporting R&D Activity<br/>(Dominant Purpose)"]
+    
+    style CoreElig fill:#4CAF50,color:#fff
+    style SuppElig1 fill:#4CAF50,color:#fff
+    style SuppElig2 fill:#4CAF50,color:#fff
+    style NotElig1 fill:#f44336,color:#fff
+    style NotElig2 fill:#f44336,color:#fff
+    style NotElig3 fill:#f44336,color:#fff
+    style NotElig4 fill:#f44336,color:#fff
+    style NotElig5 fill:#f44336,color:#fff
+    style Start fill:#2196F3,color:#fff

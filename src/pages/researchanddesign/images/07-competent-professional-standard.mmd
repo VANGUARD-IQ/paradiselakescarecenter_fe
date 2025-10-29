@@ -1,0 +1,30 @@
+flowchart LR
+    subgraph CPC["Competent Professional Characteristics"]
+        CP1["Relevant Qualifications"]
+        CP2["Industry Experience"]
+        CP3["Current Knowledge"]
+        CP4["Peer Recognition"]
+        CP5["Access to Resources"]
+        CP6["Published Work"]
+    end
+    
+    subgraph AQ["Assessment Questions"]
+        AQ1["Could they predict outcome?"]
+        AQ2["Would they need to experiment?"]
+        AQ3["Is existing knowledge applicable?"]
+        AQ4["Are there known solutions?"]
+    end
+    
+    CP1 --> Decision["Meets Standard?"]
+    CP2 --> Decision
+    CP3 --> Decision
+    CP4 --> Decision
+    CP5 --> Decision
+    CP6 --> Decision
+    
+    Decision -->|Yes| AQ1
+    AQ1 --> AQ2
+    AQ2 --> AQ3
+    AQ3 --> AQ4
+    
+    AQ4 --> Result["Technical<br/>Uncertainty<br/>Exists?"]
