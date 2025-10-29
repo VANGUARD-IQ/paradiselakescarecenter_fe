@@ -3,22 +3,22 @@
 import axios from "axios";
 
 export const getApiUrl = () => {
-  // Check for explicit environment variable first
-  const envEndpoint = process.env.REACT_APP_GRAPHQL_ENDPOINT;
+  // Check for explicit GraphQL endpoint (check both variable names)
+  const envEndpoint = process.env.REACT_APP_GRAPHQL_URI || process.env.REACT_APP_GRAPHQL_ENDPOINT;
 
   if (envEndpoint) {
-    console.log("Using GraphQL endpoint from env:", envEndpoint);
-
-
+    console.log("Using GraphQL endpoint from env variable:", envEndpoint);
     return envEndpoint;
   }
 
-  // Default to production unless explicitly set to development
+  // Only use localhost if EXPLICITLY set to development
+  // Otherwise, ALWAYS default to production
   const isDevelopment = process.env.REACT_APP_ENV === "development";
   const endpoint = isDevelopment
     ? "http://localhost:4000/graphql"
     : "https://business-builder-backend-sy9bw.ondigitalocean.app/graphql";
 
+  console.log(`REACT_APP_ENV: "${process.env.REACT_APP_ENV}", isDevelopment: ${isDevelopment}`);
   console.log("Using GraphQL endpoint:", endpoint);
   return endpoint;
 };
