@@ -195,10 +195,10 @@ export interface BrandConfig {
   };
 }
 
-// Paradise Lakes Care Center Configuration
+// Paradise Lakes Care Centre Configuration
 export const brandConfig: BrandConfig = {
   // Core Brand Identity
-  siteName: "Paradise Lakes Care Center",
+  siteName: "Paradise Lakes Care Centre",
   tagline: "Quality Care & Support Services",
   description: "Dedicated to providing exceptional care and support services in a welcoming environment.",
 
@@ -208,25 +208,25 @@ export const brandConfig: BrandConfig = {
 
   // Logo and Images
   logo: {
-    src: "/plcc/plcclogo.jpg", // Paradise Lakes Care Center logo
-    alt: "Paradise Lakes Care Center Logo",
-    favicon: "%PUBLIC_URL%/favicon.ico"
+    src: "/plcc/plcclogo.jpg", // Paradise Lakes Care Centre logo
+    alt: "Paradise Lakes Care Centre Logo",
+    favicon: "%PUBLIC_URL%/plcc/favicon_io/favicon.ico"
   },
 
   // Contact Information
   contact: {
-    businessType: "Care Center",
+    businessType: "Care Centre",
     industry: "Healthcare",
     email: "support@paradiselakescarecentre.com.au",
     phone: "+61 481076242",
-    address: "Paradise Lakes Care Center, Australia",
-    contactName: "Paradise Lakes Care Center",
-    businessName: "Paradise Lakes Care Center"
+    address: "Paradise Lakes Care Centre, Australia",
+    contactName: "Paradise Lakes Care Centre",
+    businessName: "Paradise Lakes Care Centre"
   },
 
-  // Color Palette - Paradise Lakes Care Center Blue
+  // Color Palette - Paradise Lakes Care Centre Blue
   colors: {
-    // Primary brand colors (Care Center blue)
+    // Primary brand colors (Care Centre blue)
     primary: "#5bbce9",        // Paradise Lakes primary blue
     primaryHover: "#4aa8d5",   // Darker blue on hover
     secondary: "#7fd4f0",      // Light blue accent

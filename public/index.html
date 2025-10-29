@@ -2,41 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/lightning-favicon.svg" />
-    <link rel="icon" type="image/svg+xml" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.svg" />
-    <link rel="icon" type="image/svg+xml" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.svg" />
-    <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/plcc/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/plcc/favicon_io/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/plcc/favicon_io/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#369eff" />
+    <meta name="theme-color" content="#5bbce9" />
     <meta
       name="description"
-      content="Tom Miller Services - Professional business and blockchain solutions. Custom web development, blockchain integration, and secure systems for modern enterprises."
+      content="Paradise Lakes Care Centre - Dedicated to providing exceptional care and support services in a welcoming environment."
     />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tommillerservices.com/" />
-    <meta property="og:title" content="Tom Miller Services - Business & Blockchain Solutions" />
-    <meta property="og:description" content="Professional business and blockchain solutions. Custom web development, blockchain integration, and secure systems for modern enterprises." />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image-blockchain.jpg" />
+    <meta property="og:url" content="https://manage.paradiselakescarecentre.com.au/" />
+    <meta property="og:title" content="Paradise Lakes Care Centre - Quality Care & Support Services" />
+    <meta property="og:description" content="Dedicated to providing exceptional care and support services in a welcoming environment." />
+    <meta property="og:image" content="%PUBLIC_URL%/plcc/plcclogo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Tom Miller Services" />
-    
+    <meta property="og:site_name" content="Paradise Lakes Care Centre" />
+
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://tommillerservices.com/" />
-    <meta property="twitter:title" content="Tom Miller Services - Business & Blockchain Solutions" />
-    <meta property="twitter:description" content="Professional business and blockchain solutions. Custom web development, blockchain integration, and secure systems for modern enterprises." />
-    <meta property="twitter:image" content="%PUBLIC_URL%/og-image-blockchain.jpg" />
-    
+    <meta property="twitter:url" content="https://manage.paradiselakescarecentre.com.au/" />
+    <meta property="twitter:title" content="Paradise Lakes Care Centre - Quality Care & Support Services" />
+    <meta property="twitter:description" content="Dedicated to providing exceptional care and support services in a welcoming environment." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/plcc/plcclogo.jpg" />
+
     <!-- Additional SEO Tags -->
-    <meta name="keywords" content="blockchain, web development, business solutions, smart contracts, cryptocurrency, Brisbane, Australia, Tom Miller, PhD blockchain security" />
-    <meta name="author" content="Tom Miller" />
+    <meta name="keywords" content="care centre, aged care, health services, support services, Paradise Lakes, Australia, care home, residential care" />
+    <meta name="author" content="Paradise Lakes Care Centre" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://tommillerservices.com/" />
-    
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="canonical" href="https://manage.paradiselakescarecentre.com.au/" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/plcc/favicon_io/apple-touch-icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -55,7 +54,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Tom Miller Services - Business & Blockchain Solutions</title>
+    <title>Paradise Lakes Care Centre - Management Portal</title>
     <style>
       .loading-container {
         display: flex;
@@ -64,26 +63,26 @@
         min-height: 100vh;
         background-color: #ffffff;
       }
-      .lightning-loader {
-        animation: pulse 1.5s ease-in-out infinite;
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #e2e8f0;
+        border-top-color: #5bbce9;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
       }
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        50% {
-          transform: scale(1.1);
-          opacity: 0.7;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
         }
       }
       @media (prefers-color-scheme: dark) {
         .loading-container {
           background-color: #1a202c;
+        }
+        .loading-spinner {
+          border-color: #2d3748;
+          border-top-color: #5bbce9;
         }
       }
     </style>
@@ -92,9 +91,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       <div class="loading-container">
-        <svg class="lightning-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
-          <path fill="#369eff" d="M7 2v11h3v9l7-12h-4l4-8z"/>
-        </svg>
+        <div class="loading-spinner"></div>
       </div>
     </div>
     <!--

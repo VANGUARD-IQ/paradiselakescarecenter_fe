@@ -219,13 +219,13 @@ export const FloatingNavbar: React.FC = () => {
 
     'Human Management': ['employees', 'companies', 'passwords'],
 
-    'Delivery': [  'assets'],
+    'Site Management': [  'assets'],
 
     'Communication': ['calendars', 'emails', 'phone-system', 'vapi',],
 
-    'Media & Content': ['youtubetoipfs', 'knowledgebase', 'companyknowledge', 'transcriptions'],
+    'Media & Content': ['youtubetoipfs',  'companyknowledge', ],
 
-    'Sell Ready': ['assets',],
+    // 'Sell Ready': ['assets',],
 
 
 

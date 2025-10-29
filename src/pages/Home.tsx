@@ -14,11 +14,13 @@ import { FooterWithFourColumns } from "../components/chakra/FooterWithFourColumn
 import { getColor, getBrandValue } from "../brandConfig";
 import { UnifiedLoginModal } from "./authentication/components/UnifiedLoginModal";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const Home = () => {
   const navigate = useNavigate();
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isAuthenticated } = useAuth();
 
   // Theme-aware colors
   const bg = getColor("background.main", colorMode);
@@ -87,34 +89,38 @@ const Home = () => {
             {getBrandValue("tagline")}
           </Text>
 
-          {/* Login Button */}
-          <Button
-            size="lg"
-            bg={accentBlue}
-            color="white"
-            _hover={{
-              bg: accentHover,
-              transform: "translateY(-2px)",
-              boxShadow: "lg"
-            }}
-            onClick={onOpen}
-            px={12}
-            py={7}
-            fontSize="lg"
-            borderRadius="lg"
-            transition="all 0.2s"
-          >
-            Staff Login
-          </Button>
+          {/* Login Button - Only show when not authenticated */}
+          {!isAuthenticated && (
+            <>
+              <Button
+                size="lg"
+                bg={accentBlue}
+                color="white"
+                _hover={{
+                  bg: accentHover,
+                  transform: "translateY(-2px)",
+                  boxShadow: "lg"
+                }}
+                onClick={onOpen}
+                px={12}
+                py={7}
+                fontSize="lg"
+                borderRadius="lg"
+                transition="all 0.2s"
+              >
+                Staff Login
+              </Button>
 
-          {/* Description */}
-          <Text
-            fontSize="sm"
-            color={textSecondary}
-            maxW="400px"
-          >
-            Management portal for Paradise Lakes Care Center staff
-          </Text>
+              {/* Description */}
+              <Text
+                fontSize="sm"
+                color={textSecondary}
+                maxW="400px"
+              >
+                Management portal for Paradise Lakes Care Centre staff
+              </Text>
+            </>
+          )}
         </VStack>
       </Container>
 
