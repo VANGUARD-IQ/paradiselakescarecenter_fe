@@ -200,20 +200,7 @@ export const FooterWithFourColumns = () => {
                     {brandConfig.contact.email}
                   </Text>
                 )}
-                <Link
-                  as={RouterLink}
-                  to="/offers/maintenance"
-                  color={getColor("primary")}
-                  fontSize="sm"
-                  fontWeight="500"
-                  transition="all 0.2s ease"
-                  _hover={{
-                    color: getColor("secondary"),
-                    textDecoration: "none"
-                  }}
-                >
-                  🚀 Business Maintenance Plan - $97/mo
-                </Link>
+              
               </VStack>
             </VStack>
           </SimpleGrid>
