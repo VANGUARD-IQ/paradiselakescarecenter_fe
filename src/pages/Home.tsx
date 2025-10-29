@@ -5,6 +5,7 @@ import {
   Text,
   VStack,
   Button,
+  Image,
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -55,9 +56,12 @@ const Home = () => {
       >
         <VStack spacing={8} align="center" textAlign="center">
           {/* Logo */}
-          <Box fontSize="6xl">
-            {getBrandValue("logo.src")}
-          </Box>
+          <Image
+            src={getBrandValue("logo.src")}
+            alt={getBrandValue("logo.alt")}
+            maxW={{ base: "200px", md: "300px" }}
+            objectFit="contain"
+          />
 
           {/* Site Name */}
           <Heading

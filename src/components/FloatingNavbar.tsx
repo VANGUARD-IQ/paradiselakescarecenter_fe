@@ -217,11 +217,11 @@ export const FloatingNavbar: React.FC = () => {
   // Group modules by category
   const categorizedModules = {
     // 'Core': ['profile', 'clients', 'employees', 'companies'],
-    'Core': ['bills', 'opportunities', 'proposals', 'meeting-summarizer', 'clients', ],
+    'Core': [ 'clients', ],
 
     'Human Management': ['employees', 'companies', 'passwords'],
 
-    'Delivery': [ 'projects', 'assets'],
+    'Delivery': [  'assets'],
 
     'Communication': ['calendars', 'emails', 'phone-system', 'vapi',],
 
@@ -232,12 +232,12 @@ export const FloatingNavbar: React.FC = () => {
 
 
 
-    'Other Modules': ['researchanddesign', 'provider', ],
+    // 'Other Modules': ['researchanddesign', 'provider', ],
 
-    'To Improve': ['sessions', 'subscriptions','products'],
+    // 'To Improve': ['sessions', 'subscriptions','products'],
 
 
-    'Settings': ['profile', 'tenant-management', 'admin', 'frontend-upgrades'],
+    'Settings': ['profile'],
 
 
   };

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbusiness_builder_master_frontend=self.webpackChunkbusiness_builder_master_frontend||[]).push([[1297],{41297:(e,s,r)=>{r.d(s,{createArchitectureServices:()=>t.S});var t=r(54564);r(14455)}}]);

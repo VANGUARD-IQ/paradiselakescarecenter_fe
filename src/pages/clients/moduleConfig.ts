@@ -24,17 +24,17 @@ const clientsModuleConfig: ModuleConfig = {
         {
             path: "/clients",
             component: ClientsList,
-            permissions: ["ADMIN", "MANAGER"]
+            permissions: ["ADMIN", "MANAGER", "CLIENT_PERMISSIONS_MANAGEMENT"]
         },
         {
             path: "/newclient",
             component: NewClientForm,
-            permissions: ["ADMIN", "MANAGER"]
+            permissions: ["ADMIN", "MANAGER", "CLIENT_PERMISSIONS_MANAGEMENT"]
         },
         {
             path: "/client/:id",
             component: ClientDetails,
-            permissions: ["ADMIN", "MANAGER"]
+            permissions: ["ADMIN", "MANAGER", "CLIENT_PERMISSIONS_MANAGEMENT"]
         },
         {
             path: "/clients/permissions",
